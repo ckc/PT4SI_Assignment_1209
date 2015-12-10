@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getAllByDist">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllByDistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllByDistResult" type="tns:ArrayOfDist" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDist">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Dist" nillable="true" type="tns:Dist" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Dist">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="per" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="pop" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAllByAge">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllByAgeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllByAgeResult" type="tns:ArrayOfAgeGrp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAgeGrp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgeGrp" nillable="true" type="tns:AgeGrp" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgeGrp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="male" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="female" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="total" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAllByEdu">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllByEduResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllByEduResult" type="tns:ArrayOfEdu" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEdu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Edu" nillable="true" type="tns:Edu" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Edu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="preprimary" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="primary" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lowersecondary" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ippersecondary" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="diploma" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="subdegreel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="degree" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="total" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAllByEduJson">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllByEduJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllByEduJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getAllByDistSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllByDist" />
+  </wsdl:message>
+  <wsdl:message name="getAllByDistSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllByDistResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllByAgeSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllByAge" />
+  </wsdl:message>
+  <wsdl:message name="getAllByAgeSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllByAgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllByEduSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllByEdu" />
+  </wsdl:message>
+  <wsdl:message name="getAllByEduSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllByEduResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllByEduJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllByEduJson" />
+  </wsdl:message>
+  <wsdl:message name="getAllByEduJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllByEduJsonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="getAllByDist">
+      <wsdl:input message="tns:getAllByDistSoapIn" />
+      <wsdl:output message="tns:getAllByDistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllByAge">
+      <wsdl:input message="tns:getAllByAgeSoapIn" />
+      <wsdl:output message="tns:getAllByAgeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllByEdu">
+      <wsdl:input message="tns:getAllByEduSoapIn" />
+      <wsdl:output message="tns:getAllByEduSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllByEduJson">
+      <wsdl:input message="tns:getAllByEduJsonSoapIn" />
+      <wsdl:output message="tns:getAllByEduJsonSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllByDist">
+      <soap:operation soapAction="http://tempuri.org/getAllByDist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllByAge">
+      <soap:operation soapAction="http://tempuri.org/getAllByAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllByEdu">
+      <soap:operation soapAction="http://tempuri.org/getAllByEdu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllByEduJson">
+      <soap:operation soapAction="http://tempuri.org/getAllByEduJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllByDist">
+      <soap12:operation soapAction="http://tempuri.org/getAllByDist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllByAge">
+      <soap12:operation soapAction="http://tempuri.org/getAllByAge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllByEdu">
+      <soap12:operation soapAction="http://tempuri.org/getAllByEdu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllByEduJson">
+      <soap12:operation soapAction="http://tempuri.org/getAllByEduJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:49697/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://localhost:49697/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
